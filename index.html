@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="author" content="Tanya Grimes">
+        <meta name="description" content="Barbados Places of Interest">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+        <title>Barbados Places of Interest</title>
+
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCrsUmrRtddYjg4UQtZBQHK1xXxFvxwkyc"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+
+    </head>
+    <body>
+
+        
+        <div class="result-wrapper">
+
+            <div class="content-section">
+
+                <div id="map-canvas" class="map-canvas"></div>
+
+                
+                <header>
+
+                    <div class="header">
+
+                        <a href="http://barbados.org" target="_blank"><h1>Barbados Places of Interest</h1></a>
+
+                    </div>
+
+                    <div class="menu-btn fa fa-bars"></div>
+
+                </header>
+
+
+                <section id="info" class="info">
+            
+                    <h2></h2>
+
+                    <h3 class="location"></h3>
+
+                    <div class="poi-image"></div>
+
+                    <p></p>
+
+                    <a href="#book"><h3>Book A Package Now</h3></a>
+
+                </section>
+
+            </div>
+
+
+            
+            <div class="results-content">
+
+                <div id="search" class="search">
+
+                    <div class="styled-select slate"><select></select></div>
+
+                </div>
+                
+                <h3 class="results-label">Results</h3>
+
+                <ul id="result-list" class="result-list"></ul>
+
+            </div>
+
+        
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,180 @@
+html, body, .map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px
+}
+
+body {
+	font-size: 62.5%
+}
+
+header a h1 {
+	background: url(http://barbados.org/images/barbados-tourism-encyclopedia-logo.png) no-repeat;
+	width: 33%;
+	height: 80px;
+	text-indent: -99999px;
+	margin: 0 0 0 10%;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	right: 5%;
+}
+
+header .menu-btn {
+	font-size: 3em;
+	position: absolute;
+	top: 3%;
+	left: 3%;
+	z-index: 3;
+	color: #000;
+	display: none;
+}
+
+.result-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    position: relative;
+}
+
+.content-section {
+	flex: 1;
+	transform: translate3d(0,0,0);
+	transition: transform .3s;
+}
+
+.content-section.isOpen {
+	transform: translate3d(30%,0,0);
+}
+
+.results-content {
+    width: 30%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.results-content .search {
+	margin: 5% 0 5% 25%;
+}
+
+.results-content .search h2 {
+	display: inline-block;
+	width: 10%;
+}
+
+h3.results-label, .result-list {
+	padding: 0 0 0 25%;
+}
+
+h3.results-label {
+	font-size: 2em;
+}
+
+.result-list {
+	width: 100%;
+}
+
+.result-list li {
+	/*border-bottom: 1px solid #000;*/
+	padding: 10px 0;
+	margin: 0 10px 0 0;
+	font-size: 1.6em;
+}
+
+.result-list li.active {
+	font-weight: bold;
+}
+
+.result-list li a {
+	color: #333;
+}
+
+.result-list li a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.map-canvas {
+    width: 100%;
+}
+
+.info {
+	display: none;
+	width: 35%;
+	position: absolute;
+    bottom: 15%;
+    right: 5%;
+	padding: 20px 2%;
+	background: #d2f0f9;
+}
+
+.info h2 {
+	font-size: 2.2em;
+}
+
+.info h3 {
+	font-size: 2em;
+}
+
+.info .poi-image{
+	background-size: cover;
+	width: 100%;
+	height: 250px;
+}
+
+.info p {
+	padding: 10px 0 0;
+	font-size: 2em;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px) {
+
+	header a h1 {
+		width: 70%;
+	}
+
+	header .menu-btn {
+		display: block;
+		cursor: pointer;
+	}
+
+	.results-content {
+	    flex: 1;
+		transform: translate3d(-120%,0,0);
+		transition: transform .3s;
+	}
+
+	.results-content.isOpen {
+		transform: translate3d(0,0,0);
+	}
+
+	.results-content .search {
+		margin-left: 0;
+	}
+
+	h3.results-label, .result-list {
+		padding: 0;
+	}
+
+	.info {
+		position: static;
+	    width: 100%;
+	    height: 100%;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	.content-section.isOpen {
+		transform: translate3d(90%,0,0);
+	}
+
+	.results-content {
+	    width: 90%;
+	}
+
+}
