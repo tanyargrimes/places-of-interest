@@ -46,6 +46,8 @@ var initialize = function() {
         google.maps.event.trigger(map, 'resize');
         
         map.setCenter(centre);
+
+        setMapHeight();
     });
 
 };
@@ -312,13 +314,7 @@ var populateInfo = function(id) {
     
     $('#info').css('display', 'block');
 
-    // move map up to reveal info
-    if($('.menu-btn').css('display') === 'block') {
-
-        var mapHeight = $( window ).height() - ($(window).height() * 0.2);
-
-        $('.map-canvas').css('height', mapHeight + 'px');
-    }
+    setMapHeight();
 
 };
 
@@ -328,6 +324,25 @@ var toggleMenu = function() {
     $('.content-section').toggleClass('isOpen');
 
     $('.results-content').toggleClass('isOpen');
+
+};
+
+// sets height of map
+var setMapHeight = function() {
+
+    // move map up to reveal info
+    if($('.menu-btn').css('display') === 'block') {
+
+        if($('.info').css('display') === 'block') {
+
+            var mapHeight = $( window ).height() - ($(window).height() * 0.2);
+
+            $('.map-canvas').css('height', mapHeight + 'px');
+        }
+    }
+    else {
+        $('.map-canvas').css('height', $( window ).height() + 'px');
+    }
 
 };
 
