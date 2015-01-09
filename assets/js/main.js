@@ -87,16 +87,16 @@ var populateSearch = function() {
         success: function(results) {
             // results is an array of Parse.Object.
 
-            $('#search select').append(
-                '<option value="0">All</option>'
+            $('ul.dropdown').append(
+                '<li id="0">All</li>'
             );
 
             scapeTypeNum = results.length;
 
             for (i = 0; i < scapeTypeNum; i++) {
 
-                $('#search select').append(
-                    '<option value="' + results[i].attributes.Type_Id + '">' + results[i].attributes.Name + '</option>'
+                $('ul.dropdown').append(
+                    '<li id="' + results[i].attributes.Type_Id + '">' + results[i].attributes.Name + '</li>'
                 );
 
                 scapeColours.push(results[i].attributes.Marker_Colour);
@@ -179,6 +179,8 @@ var clearListMap = function() {
     map.setZoom(11);
 
     map.panTo(map.getCenter());
+
+    //console.log(map.getCenter());
 
     $('#info').css('display', 'none');
 
@@ -352,12 +354,20 @@ $(document).ready(function() {
     //google.maps.event.addDomListener(window, 'load', initialize);
     $(window).load(initialize);
 
-    // show result list
-    $('#search select').change(function() {
+    // toggle class for ul nav
+    $('.wrapper-dropdown').on('click', function(){
+        
+        $(this).toggleClass('selected');
+    });
 
-        var typeId = $(this).val();
+    // show result list for dynamically generated list items
+    $('ul.dropdown').on('click', 'li', function() {
+
+        var typeId = this.id;
 
         showResults(typeId);
+
+        $('.wrapper-dropdown span').html('Search ' + $(this).html());
 
     });
 
