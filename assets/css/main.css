@@ -9,7 +9,7 @@ body {
 	font-family:'Roboto', sans-serif;
 }
 
-header a h1 {
+/*header a h1 {
 	background: url(http://barbados.org/images/barbados-tourism-encyclopedia-logo.png) no-repeat;
 	width: 33%;
 	height: 80px;
@@ -19,7 +19,37 @@ header a h1 {
 	position: absolute;
 	top: 0;
 	right: 5%;
+*/
+.tempLogo {
+
+width: 33%;
+	height: 80px;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	right: 5%;
+	color:white;
+	 text-shadow: 1px 1px #0000ff;
 }
+
+.tempLogo h1{
+	font-size:4em;
+	font-family: 'Sansita One', cursive;
+	font-weight: 400;
+}
+.tempLogo span{
+	font-family: 'Mrs Sheppards', cursive;
+	padding-right:4px;
+}
+
+.tempLogo h2{
+	letter-spacing: 2px;
+	font-size:1.2em;
+	text-transform: uppercase;
+	font-style:italic;
+}
+
+/*end temp logo*/
 
 header .menu-btn {
 	font-size: 3em;
